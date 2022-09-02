@@ -1,0 +1,20 @@
+{
+  "eslint.trace.server": "messages",
+  "eslint.autoFixOnSave": true,
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".ts"
+    ]
+  },
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "typescript",
+      "autoFix": true
+    }
+  ],
+  "eslint.workingDirectories": [
+    "src"
+  ]
+}
