@@ -1,5 +1,4 @@
-const isWin = false;
-const punctuateMap = {
+const EN2ZH = {
   '.': '。',
   '?': '？',
   '!': '！',
@@ -10,20 +9,18 @@ const punctuateMap = {
   '~': '～',
   '[': '【',
   ']': '】',
-  '{': isWin ? '｛' : '「',
-  '}': isWin ? '｝' : '」',
+  '{': '「',
+  '}': '」',
   '<': '《',
   '>': '》',
   '(': '（',
   ')': '）',
-  '“': '"',
-  '”': '"',
-  '‘': '\'',
-  '’': '\'',
-  '|': '｜'
-};
+  '|': '｜',
+  '\'': ['‘', '’'],
+  '"': ['“', '”']
+}
 
-const enPunctuateMap = {
+const ZH2EN = {
   '。': '.',
   '？': '?',
   '！': '!',
@@ -38,15 +35,18 @@ const enPunctuateMap = {
   '》': '>',
   '（': '(',
   '）': ')',
+  '｜': '|',
+  '「': '{',
+  '」': '}',
   '“': '"',
   '”': '"',
   '‘': '\'',
-  '’': '\'',
-  '｜': '|',
-  '「': '{',
-  '｛': '{',
-  '」': '}',
-  '｝': '}'
-};
+  '’': '\''
+}
 
-export { enPunctuateMap, punctuateMap, isWin };
+const DEFAULT_CHARACTER = {
+  EN2ZH,
+  ZH2EN
+}
+
+export { DEFAULT_CHARACTER };
