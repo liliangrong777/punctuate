@@ -1,12 +1,13 @@
 {
   "name": "punctuate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A robust repository for replacing punctuation. it has no dependencies.",
   "main": "dist/punctuate.common.js",
   "module": "dist/punctuate.esm.js",
   "unpkg": "dist/punctuate.min.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "test:onlyChanged": "jest --onlyChanged",
     "test": "jest --coverage",
     "lint": "npx eslint src",
     "build:lib": "rollup -c",
@@ -48,7 +49,6 @@
     "husky": "^8.0.0"
   },
   "engines": {
-    "//": "https://semver.npmjs.com/",
-    "node": "<15"
+    "//": "https://semver.npmjs.com/"
   }
 }
