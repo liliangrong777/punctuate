@@ -25,6 +25,8 @@ module.exports = {
   ],
   // https://eslint.org/docs/latest/user-guide/configuring/
   rules: {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
     'no-multiple-empty-lines': ['error', { max: 1 }],
     'camelcase': ['error', { properties: 'never' }],
     'curly': ["error", "multi-line"],
@@ -53,6 +55,7 @@ module.exports = {
     'dist',
     '.*',
     "*.config.*",
-    "/script/*"
+    "/script/*",
+    "test"
   ]
 }

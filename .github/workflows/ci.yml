@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - v*
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build
+    - run: npm test
+    - name: Publish code
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+        greater-version-only: true
+    - if: steps.publish.outputs.type != 'none'
+      run: echo "Version changed:${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"
