@@ -25,6 +25,8 @@ module.exports = {
   ],
   // https://eslint.org/docs/latest/user-guide/configuring/
   rules: {
+    'indent': ['error', 2],
+    'no-multi-spaces': ['error'],
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     'no-multiple-empty-lines': ['error', { max: 1 }],
