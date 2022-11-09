@@ -6,7 +6,7 @@ export class PunctuateReplacer {
   private map: Replacer;
   static replaceByMap = replaceByMap
   static replaceByPredefined = replaceByPredefined
-  constructor(replacer: Replacer) {
+  constructor (replacer: Replacer) {
     this.map = replacer
     this.replaceReg = generateReplaceReg(replacer);
   }

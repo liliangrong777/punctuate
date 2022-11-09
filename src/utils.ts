@@ -16,7 +16,7 @@ const generateReplaceReg = (replacer: Replacer) => {
   return new RegExp(pattern, 'g');
 };
 
-function validateReplacer(replacer: Replacer): boolean {
+function validateReplacer (replacer: Replacer): boolean {
   if (typeof replacer !== 'object') return false
   for (const key in replacer) {
     if (Object.prototype.hasOwnProperty.call(replacer, key)) {
@@ -27,7 +27,7 @@ function validateReplacer(replacer: Replacer): boolean {
   return true
 }
 
-function replaceByRegAndMap(str: string, replaceReg: RegExp, replaceMap: Replacer) {
+function replaceByRegAndMap (str: string, replaceReg: RegExp, replaceMap: Replacer) {
   let matchIndex: Record<string, number> = {}
   const result = str.replace(replaceReg, (match) => {
     const matcher = replaceMap[match]
@@ -41,7 +41,7 @@ function replaceByRegAndMap(str: string, replaceReg: RegExp, replaceMap: Replace
   return result
 }
 
-function replaceByMap(str: string, replacer: Replacer) {
+function replaceByMap (str: string, replacer: Replacer) {
   const reg = generateReplaceReg(replacer)
   return replaceByRegAndMap(str, reg, replacer)
 }
@@ -51,7 +51,7 @@ export const predefinedReg = {
   ZH2EN: generateReplaceReg(DEFAULT_CHARACTER.ZH2EN),
 } as const
 
-function replaceByPredefined(str: string, key: keyof typeof predefinedReg) {
+function replaceByPredefined (str: string, key: keyof typeof predefinedReg) {
   if (!predefinedReg[key]) throw `Failed to verify key , it must be within [${Object.keys(predefinedReg).join(',')}]`
   return replaceByRegAndMap(str, predefinedReg[key], DEFAULT_CHARACTER[key])
 }

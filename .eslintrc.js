@@ -25,6 +25,13 @@ module.exports = {
   ],
   // https://eslint.org/docs/latest/user-guide/configuring/
   rules: {
+    'space-unary-ops':'error',
+    'spaced-comment':'error',
+    'space-infix-ops':'error',
+    'space-in-parens':'error',
+    'space-before-function-paren':'error',
+    'space-before-blocks':'error',
+    'semi-spacing':'error',
     'indent': ['error', 2],
     'no-multi-spaces': ['error'],
     "no-unused-vars": "off",
